@@ -1,0 +1,33 @@
+.container  {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.list-container {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.go {
+    right: 0;
+    position: fixed;
+
+}
+
+.action-container  {
+    display: flex;
+    align-items: flex-end;
+}
+.scrolling-list {
+    overflow: scroll;
+      // Again, this is where the magic happens
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+}

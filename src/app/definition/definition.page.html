@@ -8,8 +8,6 @@
         <button (click)="choose(word)" class="choice">{{word.libelle}}</button>
       </div>
     </div>
-
-
     <div class="div-def" [hidden]="!etape2 || seconds == 0">
       <div *ngFor="let d of def; index as i">
         <span *ngIf="i == 0" class="span-{{i}}">{{d}}</span>
@@ -17,7 +15,6 @@
       </div>
       <button class="button2" [hidden]="g || !etape2 || seconds == 0" (click)="go()">Go!</button>
     </div>
-    
     <h1 [hidden]="!g || seconds == 0">Il reste {{seconds}} secondes !</h1>
     <div class="div-winner" style="height: 100%" [hidden]="seconds >0">
       <h1>C'est terminé !</h1>
