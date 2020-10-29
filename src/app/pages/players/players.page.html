@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Viktor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <span>Qui joue ?</span>
+    <input style="color: black;" [(ngModel)]="test" type="text">
+    <ion-button (click)="addPlayer()">Add</ion-button>
+    <ion-list *ngFor="let player of players">
+      <ion-item>{{player.name}}</ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<div id="container">
+  <strong>Commencer partie ?</strong>
+  <ion-button routerLink="/explication" >Zéparti</ion-button>
+</div>

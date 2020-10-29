@@ -1,0 +1,17 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class='container'>
+  <h1 style='text-align: center;'><b>Qui</b> vient d'écraser la concurence ?</h1>
+  <ion-item>
+      <ion-label>          </ion-label>
+      
+      <ion-select multiple="false" cancelText="Nah" okText="Okay!">
+        <ion-select-option (ionChange)="updateUsers(user)" *ngFor="let user of users" >{{user.name}}</ion-select-option>
+      </ion-select>
+      
+    </ion-item>
+    <button class="choice" (click)="updateUsers()">add</button>
+  </div>
+</ion-content>

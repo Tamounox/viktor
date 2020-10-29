@@ -6,7 +6,8 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
-  }
+  },
+  { path: 'players', loadChildren: './pages/players/players.module#PlayersPageModule' },
 ];
 
 @NgModule({

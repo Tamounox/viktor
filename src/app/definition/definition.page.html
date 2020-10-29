@@ -1,0 +1,27 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="div-container">
+    <div class="div-div-buttons" [hidden]="!etape1">
+      <div class="div-buttons" *ngFor="let word of words">
+        <button (click)="choose(word)" class="choice">{{word.libelle}}</button>
+      </div>
+    </div>
+
+
+    <div class="div-def" [hidden]="!etape2 || seconds == 0">
+      <div *ngFor="let d of def; index as i">
+        <span *ngIf="i == 0" class="span-{{i}}">{{d}}</span>
+        <span *ngIf="i !== 0">{{i+1}}. {{d}}</span>
+      </div>
+      <button class="button2" [hidden]="g || !etape2 || seconds == 0" (click)="go()">Go!</button>
+    </div>
+    
+    <h1 [hidden]="!g || seconds == 0">Il reste {{seconds}} secondes !</h1>
+    <div class="div-winner" style="height: 100%" [hidden]="seconds >0">
+      <h1>C'est terminé !</h1>
+      <button class="button2" routerLink="/vinner">Désigner gangnant !</button>
+    </div>
+  </div>
+</ion-content>
