@@ -1,6 +1,6 @@
 import { UserService } from './../../user.service';
 import { Component, OnInit } from '@angular/core';
-import { ReglesComponent } from './../../regles/regles.component';
+import { ReglesComponent } from './../../components/regles/regles.component';
 import { PopoverController } from '@ionic/angular';
 
 
@@ -14,7 +14,7 @@ export class PlayersPage implements OnInit {
   constructor(private userService: UserService, public popoverController: PopoverController) { }
   test = '';
   players = [];
-
+  isOnePlayerOrMore = false;
   ngOnInit() {
   }
 
@@ -28,13 +28,28 @@ export class PlayersPage implements OnInit {
     return await popover.present();
   }
   addPlayer() {
-    console.log('players', this.players);
-    this.players.push( {
-      name: this.test,
-      score: 0
-    });
-    this.test = '';
-    console.log('players', this.players);
+    if (this.test.length >= 1)  {
+      this.players.push( {
+        name: this.test,
+        score: 0
+      });
+      this.test = '';
+      this.userService.getUsers(this.players);
+      this.isOnePlayerOrMore = true;
+    }
+  }
+
+  deletePlayer(player)  {
+    let updatedArray = [];
+    for (let el of this.players) {
+      if (el !== this.players[player]) {
+        updatedArray.push(el);
+      }
+    }
+    this.players = updatedArray;
     this.userService.getUsers(this.players);
+    if  (this.players.length === 0)  {
+      this.isOnePlayerOrMore = false;
+    }
   }
 }

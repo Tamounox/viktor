@@ -1,0 +1,18 @@
+<ion-header>
+  </ion-header>
+  
+  <ion-content>
+  
+    <div [hidden]="isWinner" style="height: 100%; width: 100%; text-align: center; padding: 40px; " routerLink="/jeu">
+      <h3><b>Félicitation au vainqueur ! </b> Jeu suivant ! </h3>
+    </div>
+    <div [hidden]="!isWinner" class='container'>
+      <h1>Nous avons un <b>vainqueur</b> !</h1>
+      <div class="list" *ngFor="let user of users" >
+        <div class="span-container">
+            <span>{{user.score}} points <b>{{user.name}} </b></span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  

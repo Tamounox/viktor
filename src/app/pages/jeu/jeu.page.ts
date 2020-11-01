@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './jeu.page.html',
   styleUrls: ['./jeu.page.scss'],
 })
-export class JeuPage implements OnInit {
+export class JeuPage  {
   jeux = ['definition', 'tourisme', 'zoologie'];
   //, 'microscope', 'tour bonus'
   tour  = 0;
@@ -13,7 +13,7 @@ export class JeuPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ionViewDidEnter(){
     let indexJeu = getRandomInt(this.jeux.length);
     console.log(indexJeu);
     this.selectedGame = this.jeux[indexJeu];
@@ -22,6 +22,7 @@ export class JeuPage implements OnInit {
       return Math.floor(Math.random() * Math.floor(max));
     }
   }
+
 
 
 }

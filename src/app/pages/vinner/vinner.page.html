@@ -1,0 +1,16 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class='container'>
+    <h1 style='text-align: center;'><b>Qui</b> vient d'écraser la concurence ?</h1>
+    <div class="select-container">
+      <ion-select [(ngModel)]="selectedUser" name="selectUser" multiple="false" (ionChange)="selectWinner()" required >
+        <ion-select-option *ngFor="let user of users" value="{{user.name}}">
+        {{user.name}}
+        </ion-select-option>
+      </ion-select>
+      <ion-button routerLink="/next-game" [hidden]="!isSelected" (click)="updateUsers()">Select</ion-button>
+    </div>
+  </div>
+</ion-content>
