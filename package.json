@@ -29,6 +29,7 @@
     "gradle": "^1.2.3",
     "grommet": "^2.15.2",
     "grommet-icons": "^4.5.0",
+    "node": "^15.0.1",
     "rxjs": "~6.5.5",
     "styled-components": "^5.2.0",
     "tslib": "^2.0.0",
@@ -47,6 +48,7 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "cordova-android": "^9.0.0",
+    "cordova-ios": "^6.1.1",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
@@ -80,7 +82,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

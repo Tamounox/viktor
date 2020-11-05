@@ -2,7 +2,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="div-container">
+  <div class="div-container theme">
       <div class="div-div-buttons" [hidden]="!etape1">
         <div class="div-buttons" *ngFor="let word of words">
           <button (click)="choose(word)" class="choice">{{word.libelle}}</button>

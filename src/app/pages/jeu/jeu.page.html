@@ -2,9 +2,9 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="selectedGame === 'definition'" style=" background-image: url('./../../assets/def.jpg'); background-repeat: no-repeat; background-size: 100%; height: 100%; width: 100%;" routerLink="/definition"></div>
-  <div *ngIf="selectedGame === 'microscope'" style="height: 100%; width: 100%;" routerLink="/microscope">Microscope</div>
-  <div *ngIf="selectedGame === 'tourisme'" style="background-image: url('./../../assets/tourisme.jpg'); background-repeat: no-repeat; background-size: 100%; height: 100%; width: 100%;" routerLink="/tourisme"></div>
-  <div *ngIf="selectedGame === 'zoologie'" style="background-image: url('./../../assets/zoologie.jpg'); background-repeat: no-repeat; background-size: 100%; height: 100%; width: 100%;" routerLink="/zoologie"></div>
-  <div *ngIf="selectedGame === 'tour bonus'" style="height: 100%; width: 100%;" routerLink="/tourbonus">Tour bonus</div>
+  <div *ngIf="selectedGame === 'definition'" class='img' routerLink="/definition"></div>
+  <div *ngIf="selectedGame === 'microscope'" class='img' routerLink="/microscope">Microscope</div>
+  <div *ngIf="selectedGame === 'tourisme'" class='img' routerLink="/tourisme"></div>
+  <div *ngIf="selectedGame === 'zoologie'" class='img' routerLink="/zoologie"></div>
+  <div *ngIf="selectedGame === 'tour bonus'" class='img' routerLink="/tourbonus">Tour bonus</div>
 </ion-content>
