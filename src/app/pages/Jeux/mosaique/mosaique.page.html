@@ -13,8 +13,28 @@
       <div class="mosaiqueImage">
         <ion-img [src]=imgPerson></ion-img>
       </div>
-      <div class="mosaique"></div>
+      <div class="mosaique">
+        <div *ngFor='let cols of cols'>
+            <div *ngFor="let row of rows">
+                <!-- <div *ngIf="cols" class="block"></div> -->
+                <!-- Encore en conception -->
+                
+            </div>
+        </div>
+      </div>
     </div>
+
+    <div class="div-winner" style="height: 100%" [hidden]="g || !etape2 || seconds == 0">
+      <ion-button class="button2"  (click)="go()">Go!</ion-button>
+    </div>
+    <h1 [hidden]="!g || seconds == 0">Il reste {{seconds}} secondes !</h1>
+  
+
+    <div class="div-winner" style="height: 100%" [hidden]="seconds >0">
+      <h1>C'est terminé !</h1>
+      <ion-button class="button2" routerLink="/vinner">Désigner gangnant !</ion-button>
+    </div>
+ 
   </div>
 
 </ion-content>

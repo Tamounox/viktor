@@ -8,29 +8,44 @@ import { Component, OnInit } from '@angular/core';
 export class MosaiquePage implements OnInit {
 
   constructor() { }
+
+  // Definitions de nos variables global (en cour de conception)
   cols = [true, true, true, true]
   rows = [true, true, true, true]
+  table = []
+
+  // Creation des variable d'une personne
   person
   persons = []
   imgPerson
   namePerson
+ 
+  // gestion du temps
+  seconds = 2;
+  g = false;
+  tensec = false;
+  end = false;
 
+  // nombre de proposition
   nbrChoix = 3;
 
+
+  // Permet la gestion de l'affichage aux diférentes etapes du jeu
   etape1 = true 
   etape2 = false
 
+  // simili JSON
   allpersons = [{
-    libelle: 'Putin',
-    img: 'https://storage.googleapis.com/afs-prod/media/01cf2d5940a443e0bf410e98032d2d09/800.jpeg'
+    libelle: 'Chat',
+    img: 'https://www.zooplus.fr/magazine/wp-content/uploads/2019/11/chaton-errant-768x512.jpeg'
   },
   {
-    libelle: 'Balkany',
-    img: 'https://cdn-media.rtl.fr/online/image/2019/0918/7798350993_patrick-balkany-a-la-mairie-de-levallois-perret.jpg'
+    libelle: 'Chien',
+    img: 'https://static.actu.fr/uploads/2019/10/chien-960x640.jpg'
   },
   {
-    libelle: 'Trump',
-    img: 'https://img.lemde.fr/2020/09/17/0/0/5009/3339/688/0/60/0/9325405_f140e5a26e1e472b94e34b1dfa653fb8-18dd5c75b85e4e5dbcde4a47e273e3f6-0.jpg'
+    libelle: 'Lapin',
+    img: 'https://www.tomandco.fr/media/contentmanager/content/cache/440x800/advices/Lapin-1400pxls_4.jpg'
   }
 ];
 
@@ -43,14 +58,48 @@ export class MosaiquePage implements OnInit {
         this.etape1 = true;
       }
     }
+    this.generateTable()
   }
 
+
+  // En court de conception
+  generateTable(){
+    var x = new Array(10);
+    for (var i = 0; i < x.length; i++) {
+      x[i] = new Array(3).fill(true);
+    }
+    this.table = x
+  }
+
+  // Etape 1 choix de la person a faire deviner
   choose(person) {
     this.person = person;
     this.imgPerson = this.person.img;
     this.namePerson = this.person.libelle;
     this.etape1 = false;
     this.etape2 = true;
+  }
+
+  // Lancement du chrono
+  go() {
+    this.timer();
+    this.g = true;
+    this.tensec = true;
+  }
+
+  // compte du timer
+  timer() {
+    if (this.seconds > 0) {
+      setTimeout(() => this.nul(), 1000);
+    }
+  }
+  nul() {
+    this.seconds = this.seconds - 1;
+    this.timer();
+  }
+  endDef() {
+    this.end = true;
+    this.etape2 = false;
   }
 
 }
