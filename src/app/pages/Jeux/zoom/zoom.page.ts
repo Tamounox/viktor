@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-zoom',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./zoom.page.scss'],
 })
 export class ZoomPage implements OnInit {
+
+  @ViewChild('canvas', { static: true }) canvas: ElementRef<HTMLCanvasElement>;
+  @ViewChild('img', { static: true }) img: ElementRef;
 
   public etape1 = false;
   public etape2 = false;
@@ -16,6 +19,7 @@ export class ZoomPage implements OnInit {
   public gameStarted = false;
   public igor: PictureWord; //Mot choisi par le joueur
   public choosenImg: string;
+  private ctx: CanvasRenderingContext2D;
 
   public zoomRate: number = 5;
 
@@ -44,6 +48,8 @@ export class ZoomPage implements OnInit {
       if (this.choosenWords.length === this.nbrChoix) {
         this.etape1 = true;
       }
+
+      this.drawImage();
     }
   }
 
@@ -71,6 +77,15 @@ export class ZoomPage implements OnInit {
     this.seconds = this.seconds - 1;
     this.zoomRate = this.zoomRate - 0.5;
     this.timer();
+  }
+
+  drawImage() {
+    this.ctx = this.canvas.nativeElement.getContext('2d');
+    const i = new Image();
+    i.src = this.choosenImg;
+    i.onload = () => {
+      this.ctx.drawImage(i, 200, 200);
+    };
   }
 }
 

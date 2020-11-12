@@ -7,9 +7,11 @@
     </div>
 
     <div class="div-def" [hidden]="!etape2 || end">
-      <img style="background-image: url({{choosenImg}}); zoom: 5;" />
+      <img #img style="display: none;" src="{{choosenImg}}" /> 
+      <canvas #canvas></canvas>
+
       <button class="button" [hidden]="gameStarted" (click)="go()">Go!</button>
-      <h1 style="position: fixed; top: 20px;" [hidden]="!gameStarted || end">Il reste {{seconds}}
+      <h1 [hidden]="!gameStarted || end">Il reste {{seconds}}
         <span *ngIf="seconds > 1">secondes</span> <span *ngIf="seconds === 1">seconde</span> !</h1>
     </div>
 
