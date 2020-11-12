@@ -6,15 +6,16 @@
       </div>
     </div>
 
-  <div class="div-def" style="background-image: url({{def}});" [hidden]="!etape2 || seconds == 0">
-    <button class="button2" [hidden]="gameStarted" (click)="go()">Go!</button>
-    <h1 style="position: fixed; top: 20px;" [hidden]="!gameStarted || seconds == 0">Il reste {{seconds}} secondes !</h1>
-  </div>
-  
-  <div class="div-winner" style="height: 100%" [hidden]="seconds > 0">
-    <h1>C'est terminé !</h1>
-    <button class="button2" routerLink="/vinner">Désigner gagnant !</button>
-  </div>
-</div>
+    <div class="div-def" [hidden]="!etape2 || end">
+      <img style="background-image: url({{choosenImg}}); zoom: 5;" />
+      <button class="button" [hidden]="gameStarted" (click)="go()">Go!</button>
+      <h1 style="position: fixed; top: 20px;" [hidden]="!gameStarted || end">Il reste {{seconds}}
+        <span *ngIf="seconds > 1">secondes</span> <span *ngIf="seconds === 1">seconde</span> !</h1>
+    </div>
 
+    <div class="div-winner" [hidden]="!end">
+      <h1>C'est terminé !</h1>
+      <button class="button" routerLink="/vinner">Désigner gagnant !</button>
+    </div>
+  </div>
 </ion-content>
