@@ -1,0 +1,20 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="div-container theme">
+    <div class="div-div-buttons" [hidden]="!etape1">
+      <div class="div-buttons" *ngFor="let person of persons">
+        <button (click)="choose(person)" class="choice">{{person.libelle}}</button>
+      </div>
+    </div>
+
+    <div [hidden]="!etape2">
+      <div class="mosaiqueImage">
+        <ion-img [src]=imgPerson></ion-img>
+      </div>
+      <div class="mosaique"></div>
+    </div>
+  </div>
+
+</ion-content>

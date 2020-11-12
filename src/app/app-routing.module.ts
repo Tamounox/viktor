@@ -44,6 +44,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/Jeux/definition/definition.module').then( m => m.DefinitionPageModule)
   },
   {
+    path: 'mosaique',
+    loadChildren: () => import('./pages/Jeux/mosaique/mosaique.module').then( m => m.MosaiquePageModule)
+  },
+  {
     path: 'vinner',
     loadChildren: () => import('./pages/vinner/vinner.module').then( m => m.VinnerPageModule)
   },
