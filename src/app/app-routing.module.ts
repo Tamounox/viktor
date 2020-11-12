@@ -58,7 +58,11 @@ const routes: Routes = [
   {
     path: 'next-game',
     loadChildren: () => import('./pages/next-game/next-game.module').then( m => m.NextGamePageModule)
+  },  {
+    path: 'zoom',
+    loadChildren: () => import('./pages/Jeux/zoom/zoom.module').then( m => m.ZoomPageModule)
   },
+
 ];
 
 @NgModule({
