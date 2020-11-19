@@ -31,10 +31,17 @@
 //     color: #ee7406 !important;
 // }
 html{
-  
+    fill: var(--secondary) !important;
     background-color: var(--primary) !important;
     color: var(--secondary) !important;
   }
+
+.st0    {
+    fill: var(--secondary) !important;
+    background-color: var(--primary) !important;
+    height: 100%;
+    width: 100%;
+}
 .choice {
     height: 28px;
     width: 150px;
@@ -81,13 +88,4 @@ html{
     background-position: right;
     background-repeat: no-repeat;
 
-}
-.img    {
-    background-image: url('./assets/def.jpg'); 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%; 
-    width: 100%;
-    background-size: 100%;
 }
