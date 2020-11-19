@@ -14,9 +14,11 @@ export class OptionsPage implements OnInit {
   }
   //try to mettre a jour la variable daans le scss
   saveAsConfig()  {
-    console.log('d1', document.documentElement.style.getPropertyValue(':root'));
-    document.documentElement.style.setProperty('--ion-background-color', this.primary );
-    document.documentElement.style.setProperty('--ion-color', this.secondary);
+    document.documentElement.style.setProperty('background-color', this.primary );
+    document.documentElement.style.setProperty('color', this.secondary);
+    const el = document.querySelector('html');
+    el.style.setProperty('--primary', this.primary );
+    el.style.setProperty('--secondary', this.secondary );
 
   }
 

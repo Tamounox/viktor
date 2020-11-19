@@ -30,7 +30,11 @@
 //     background-color: #f8eb3c !important;
 //     color: #ee7406 !important;
 // }
-
+html{
+  
+    background-color: var(--primary) !important;
+    color: var(--secondary) !important;
+  }
 .choice {
     height: 28px;
     width: 150px;
