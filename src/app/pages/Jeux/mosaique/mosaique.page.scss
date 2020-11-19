@@ -3,26 +3,28 @@ ion-img {
     max-height: 100%;
 }
 
-.mosaiqueImage {
-    width: 600px;
-    height: 400px;
-}
+// .mosaiqueImage {
+//     width: 100px;
+//     height: 100px;
+// }
 
-.mosaique {
-    position: absolute;
-    display: inline; 
-    margin-top: -400px;
-	width: 600px;
-	height: 400px;
+.mosaique { 
+    display: flex; 
+    margin-top: -500px;
+	width: 500px;
+	height: 500px;
 	z-index: 2;
 }
 
 .block {
-    background-color: red; 
-    height: 120px; 
-    width: 80px;
+    background-color: #50c8ff;
+    position: absolute;
 }
 
+.primeblock {
+    position: absolute;
+    z-index: -1;
+}
 
 .div-buttons    {
     height: 20%;
