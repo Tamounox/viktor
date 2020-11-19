@@ -59,6 +59,10 @@ const routes: Routes = [
     path: 'next-game',
     loadChildren: () => import('./pages/next-game/next-game.module').then( m => m.NextGamePageModule)
   },
+  {
+    path: 'options',
+    loadChildren: () => import('./pages/options/options.module').then( m => m.OptionsPageModule)
+  },
 ];
 
 @NgModule({
