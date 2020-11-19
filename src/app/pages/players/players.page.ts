@@ -1,8 +1,7 @@
-import { UserService } from './../../user.service';
 import { Component, OnInit } from '@angular/core';
 import { ReglesComponent } from './../../components/regles/regles.component';
 import { PopoverController } from '@ionic/angular';
-
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-players',

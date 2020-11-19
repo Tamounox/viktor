@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ZoomService } from 'src/app/services/zoom/zoom.service';
 
 @Component({
   selector: 'app-zoom',
@@ -22,24 +23,27 @@ export class ZoomPage implements OnInit {
   private ctx: CanvasRenderingContext2D;
 
   public zoomRate: number = 5;
+  public wordsDictionary: PictureWord[];
 
-  constructor() { }
+  constructor(private _zoomService: ZoomService) { }
 
-  wordsDictionary: PictureWord[] = [{
-    libelle: 'Omar Sy',
-    img: './../../../assets/celebrites/omar-sy.jpg',
-  },
-  {
-    libelle: 'Johnny Hallyday',
-    img: './../../../assets/celebrites/johnny-hallyday.jpg',
-  },
-  {
-    libelle: 'Zinédine Zidane',
-    img: './../../../assets/celebrites/zinedine-zidane.jpg',
-  },
-  ];
+  //  = [{
+  //   libelle: 'Omar Sy',
+  //   img: './../../../assets/celebrites/omar-sy.jpg',
+  // },
+  // {
+  //   libelle: 'Johnny Hallyday',
+  //   img: './../../../assets/celebrites/johnny-hallyday.jpg',
+  // },
+  // {
+  //   libelle: 'Zinédine Zidane',
+  //   img: './../../../assets/celebrites/zinedine-zidane.jpg',
+  // },
+  // ];
 
   ngOnInit() { //Initialisation de la liste de 3 mots dans lequel le joueur doit choisir
+    this.wordsDictionary = this._zoomService.getDataZoom();
+
     for (let index = 0; index < this.nbrChoix; index++) {
       let indexWord = Math.floor(Math.random() * Math.floor(this.wordsDictionary.length));
       this.choosenWords.push(this.wordsDictionary[indexWord]);
@@ -89,7 +93,13 @@ export class ZoomPage implements OnInit {
   }
 }
 
+
 export class PictureWord {
+  constructor(libelle, img) {
+    this.libelle = libelle;
+    this.img = img;
+  }
+  
   public libelle: string;
   public img: string;
 }

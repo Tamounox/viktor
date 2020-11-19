@@ -25,23 +25,23 @@ const routes: Routes = [
   },
   {
     path: 'definition',
-    loadChildren: () => import('./pages/Jeux/definition/definition.module').then( m => m.DefinitionPageModule)
+    loadChildren: () => import('./pages/jeux/definition/definition.module').then( m => m.DefinitionPageModule)
   },
   {
     path: 'microcope',
-    loadChildren: () => import('./pages/Jeux/microcope/microcope.module').then( m => m.MicrocopePageModule)
+    loadChildren: () => import('./pages/jeux/microcope/microcope.module').then( m => m.MicrocopePageModule)
   },
   {
     path: 'zoologie',
-    loadChildren: () => import('./pages/Jeux/zoologie/zoologie.module').then( m => m.ZoologiePageModule)
+    loadChildren: () => import('./pages/jeux/zoologie/zoologie.module').then( m => m.ZoologiePageModule)
   },
   {
     path: 'tourbonus',
-    loadChildren: () => import('./pages/Jeux/tourbonus/tourbonus.module').then( m => m.TourbonusPageModule)
+    loadChildren: () => import('./pages/jeux/tourbonus/tourbonus.module').then( m => m.TourbonusPageModule)
   },
   {
     path: 'definition',
-    loadChildren: () => import('./pages/Jeux/definition/definition.module').then( m => m.DefinitionPageModule)
+    loadChildren: () => import('./pages/jeux/definition/definition.module').then( m => m.DefinitionPageModule)
   },
   {
     path: 'vinner',
@@ -49,16 +49,17 @@ const routes: Routes = [
   },
   {
     path: 'tourisme',
-    loadChildren: () => import('./pages/Jeux/tourisme/tourisme.module').then( m => m.TourismePageModule)
+    loadChildren: () => import('./pages/jeux/tourisme/tourisme.module').then( m => m.TourismePageModule)
   },
   {
     path: 'nextJeu',
-    loadChildren: () => import('./pages/Jeux/tourisme/tourisme.module').then( m => m.TourismePageModule)
+    loadChildren: () => import('./pages/jeux/tourisme/tourisme.module').then( m => m.TourismePageModule)
   },
   {
     path: 'next-game',
     loadChildren: () => import('./pages/next-game/next-game.module').then( m => m.NextGamePageModule)
-  },  {
+  },
+  {
     path: 'zoom',
     loadChildren: () => import('./pages/Jeux/zoom/zoom.module').then( m => m.ZoomPageModule)
   },
