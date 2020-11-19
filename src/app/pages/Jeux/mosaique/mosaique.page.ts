@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MosaiqueService } from './mosaique.service';
 
 @Component({
   selector: 'app-mosaique',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MosaiquePage implements OnInit {
 
-  constructor() { }
+  constructor(private mosaiqueService: MosaiqueService) { }
 
   // Definitions de nos variables global (en cour de conception)
-  cols = [true, true, true, true]
-  rows = [true, true, true, true]
   table = []
+  height = 0;
+  width = 0;
+  
+  heightPicture = 500;
+  widthPicture = 500;
 
   // Creation des variable d'une personne
   person
@@ -21,7 +25,7 @@ export class MosaiquePage implements OnInit {
   namePerson
  
   // gestion du temps
-  seconds = 2;
+  seconds = 10;
   g = false;
   tensec = false;
   end = false;
@@ -34,22 +38,11 @@ export class MosaiquePage implements OnInit {
   etape1 = true 
   etape2 = false
 
-  // simili JSON
-  allpersons = [{
-    libelle: 'Chat',
-    img: 'https://www.zooplus.fr/magazine/wp-content/uploads/2019/11/chaton-errant-768x512.jpeg'
-  },
-  {
-    libelle: 'Chien',
-    img: 'https://static.actu.fr/uploads/2019/10/chien-960x640.jpg'
-  },
-  {
-    libelle: 'Lapin',
-    img: 'https://www.tomandco.fr/media/contentmanager/content/cache/440x800/advices/Lapin-1400pxls_4.jpg'
-  }
-];
+  // Récupérations des personages
+  allpersons = [];
 
   ngOnInit() {
+    this.allpersons = this.mosaiqueService.getAllpersons();
     for (let index = 0; index < this.nbrChoix; index++) {
       let indexWord = Math.floor(Math.random() * Math.floor(this.allpersons.length));
       this.persons.push(this.allpersons[indexWord]);
@@ -62,14 +55,40 @@ export class MosaiquePage implements OnInit {
   }
 
 
-  // En court de conception
+  // Creation de notre table
   generateTable(){
+    this.width = 50; // largeur
+    this.height = 50; // hauteur
+    // let arr1
+    // let arr2
     var x = new Array(10);
     for (var i = 0; i < x.length; i++) {
-      x[i] = new Array(3).fill(true);
+      x[i] = new Array(6).fill(true);
     }
     this.table = x
   }
+
+  // Suppression d'un bloc de maniere random
+  updateTable(){
+    let x, y;
+    do {
+      x = Math.floor(Math.random() * Math.floor(this.table.length));
+      y = Math.floor(Math.random() * Math.floor(this.table[0].length));  
+    } while (this.table[x][y] == false);
+    this.table[x][y] = false
+  }
+
+  mosaiqueGO(){
+    if (this.seconds > 0){
+      setTimeout(() => this.mosaiqueSet(), 180);
+    }
+  }
+
+  mosaiqueSet(){
+    this.updateTable()
+    this.mosaiqueGO()
+  }
+
 
   // Etape 1 choix de la person a faire deviner
   choose(person) {
@@ -82,6 +101,7 @@ export class MosaiquePage implements OnInit {
 
   // Lancement du chrono
   go() {
+    this.mosaiqueGO();
     this.timer();
     this.g = true;
     this.tensec = true;
