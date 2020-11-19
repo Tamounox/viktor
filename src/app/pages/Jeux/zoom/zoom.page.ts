@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { PictureWord } from 'src/app/models/picture-word';
 import { ZoomService } from 'src/app/services/zoom/zoom.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class ZoomPage implements OnInit {
   public choosenWords: PictureWord[] = [];
   public nbrChoix = 3;
   public seconds = 10;
+  public scale = 10;
   public gameStarted = false;
   public igor: PictureWord; //Mot choisi par le joueur
   public choosenImg: string;
@@ -26,20 +28,6 @@ export class ZoomPage implements OnInit {
   public wordsDictionary: PictureWord[];
 
   constructor(private _zoomService: ZoomService) { }
-
-  //  = [{
-  //   libelle: 'Omar Sy',
-  //   img: './../../../assets/celebrites/omar-sy.jpg',
-  // },
-  // {
-  //   libelle: 'Johnny Hallyday',
-  //   img: './../../../assets/celebrites/johnny-hallyday.jpg',
-  // },
-  // {
-  //   libelle: 'Zinédine Zidane',
-  //   img: './../../../assets/celebrites/zinedine-zidane.jpg',
-  // },
-  // ];
 
   ngOnInit() { //Initialisation de la liste de 3 mots dans lequel le joueur doit choisir
     this.wordsDictionary = this._zoomService.getDataZoom();
@@ -52,8 +40,6 @@ export class ZoomPage implements OnInit {
       if (this.choosenWords.length === this.nbrChoix) {
         this.etape1 = true;
       }
-
-      this.drawImage();
     }
   }
 
@@ -62,6 +48,8 @@ export class ZoomPage implements OnInit {
     this.choosenImg = this.igor.img;
     this.etape2 = true;
     this.etape1 = false;
+
+    this.drawImage();
   }
 
   go() {
@@ -80,26 +68,21 @@ export class ZoomPage implements OnInit {
   nul() { //Décrementation du timer et recalcule du zoom de l'image
     this.seconds = this.seconds - 1;
     this.zoomRate = this.zoomRate - 0.5;
+    this.resizeCanvas();
     this.timer();
   }
 
   drawImage() {
     this.ctx = this.canvas.nativeElement.getContext('2d');
-    const i = new Image();
-    i.src = this.choosenImg;
-    i.onload = () => {
-      this.ctx.drawImage(i, 200, 200);
-    };
-  }
-}
 
-
-export class PictureWord {
-  constructor(libelle, img) {
-    this.libelle = libelle;
-    this.img = img;
+    setTimeout(() => {
+      this.ctx.scale(this.scale, this.scale);
+      this.ctx.drawImage(this.img.nativeElement, 0, 0, 300, 150);
+    }, 500);
   }
-  
-  public libelle: string;
-  public img: string;
+
+  resizeCanvas() {
+    this.scale = this.scale - 1;
+    this.ctx.scale(this.scale, this.scale);
+  }
 }

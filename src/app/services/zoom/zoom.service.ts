@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PictureWord } from 'src/app/pages/Jeux/zoom/zoom.page';
+import { PictureWord } from 'src/app/models/picture-word';
 import jsonData from './zoom.data.json';
 
 @Injectable({
