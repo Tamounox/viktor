@@ -3,22 +3,22 @@
   
   <ion-content [fullscreen]="true">
       <div class="container theme">
-        <a style='position: fixed; top: 10px; right: 10px;' routerLink="/options"> Q</a>
+        <button class="btn btn-accueil btn-option" routerLink="/options">Options</button>
         <h1><b>Qui</b> veut jouer avec moi ?</h1>
         <div class="input-container">
-          <input style="color: #ee7406; font-weight: bold;" [(ngModel)]="test" type="text">
-          <ion-button (click)="addPlayer()">+</ion-button>
+          <input style="font-weight: bold;" [(ngModel)]="test" type="text">
+          <button class="btn btn-add-del" (click)="addPlayer()">+</button>
         </div>
         <div class="list-container">
           <div class="list" *ngFor="let player of players, index as i">
             <div class="span-container">
-              <span><b>{{player.name}}</b></span><button style="background-color: #f8eb3c; color: #ee7406; border-color: 1px,#ee7406;" (click)='deletePlayer(i)'>X</button>
+              <span><b>{{player.name}}</b></span><button class="btn btn-add-del" (click)='deletePlayer(i)'>X</button>
             </div>
           </div>
         </div>
         <div class='action-container'>
-          <a class="regles" (click)="presentPopover()"><span style='font-size: 3rem;'>?</span></a>
-          <ion-button routerLink="/explication" [hidden]="!isOnePlayerOrMore" class="go" ></ion-button>
+          <button (click)="presentPopover()" class="btn btn-accueil btn-regles">Règles</button>
+          <button routerLink="/explication" [hidden]="!isOnePlayerOrMore" class="btn-go btn btn-accueil" >C Tipar!</button>
         </div>
       </div>
   </ion-content>

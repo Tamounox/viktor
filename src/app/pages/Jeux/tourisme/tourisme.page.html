@@ -4,21 +4,34 @@
 <ion-content>
   <div class="div-container theme">
       <div class="div-div-buttons" [hidden]="!etape1">
+        <div class="bg">
+          <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;  height: 144%;position: fixed; right: -220px;top: -83px;width: 100%;" xml:space="preserve">
+            <path style="fill: var(--primary); stroke: var(--secondary); stroke-width:35px; transform: rotate(7deg);" d="M590.72,414.11C590.72,577.56,478.98,703,315.54,703S4.28,622.55,4.28,459.1S93.48,138,256.92,138
+              S590.72,250.67,590.72,414.11z"/>
+            <polygon  style="fill: var(--secondary); transform: rotate(7deg);" points="211.84,209.45 243.99,420.8 280.74,420.8 280.74,209.45 "/>
+            <polygon  style="fill: var(--secondary); transform: rotate(7deg);" points="375.67,241.61 346.58,420.8 309.83,420.8 309.83,241.61 "/>
+            <path  style="fill: (--secondary); transform: rotate(7deg);" d="M470.97,596.85H123.69c0-49.64,54.28-91.42,128.07-103.81l-8.36,51.53h39.37v-54.9
+              c4.79-0.26,9.65-0.38,14.55-0.38c0.95,0,1.91,0,2.86,0.03v74.49h41.21l-11.04-72.56C410.46,500.79,470.97,544.44,470.97,596.85z"/>
+          </svg>
+        </div>
         <div class="div-buttons" *ngFor="let word of words">
-          <button (click)="choose(word)" class="choice">{{word.libelle}}</button>
+          <button (click)="choose(word)" class="btn-choice">{{word.libelle}}</button>
         </div>
       </div>
 
 
     <div class="div-def" style="background-image: url({{def}});" [hidden]="!etape2 || seconds == 0">
     <!-- <img src="{{def}}" class="img" alt=""> -->
-      <button class="button2" [hidden]="g" (click)="go()">Go!</button>
+      <button class="btn btn-choice-little" [hidden]="g" (click)="go()">Go!</button>
       <h1 style="position: fixed; top: 20px;" [hidden]="!g || seconds == 0">Il reste {{seconds}} secondes !</h1>
     </div>
     
-    <div class="div-winner" style="height: 100%" [hidden]="seconds >0">
-      <h1>C'est terminé !</h1>
-      <button class="button2" routerLink="/vinner">Désigner gangnant !</button>
+    <div class="div-winner"  style="height: 100%; background-image: url({{def}});" [hidden]="seconds >0">
+      <div class="div-opa">
+        <h2>C'etait <strong>{{lib}}</strong> les nazes !</h2>
+        <button class="btn btn-win" routerLink="/vinner">Désigner gangnant !</button>
+      </div>
     </div>
   </div>
 </ion-content>

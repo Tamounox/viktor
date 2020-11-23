@@ -34,6 +34,12 @@
   body {
     --ion-color-primary: --secondary;
     --ion-color-secondary: --secondary;
+    --ion-button-background: var(--secondary);
+    --ion-button-color: var(--primary);
+    --color: --secondary !important;
+    --background: --primary !important;
+    
+
   }
 
   /*
@@ -44,13 +50,19 @@
   .ios body {
     --ion-background-color: --primary;
 
-    --ion-text-color: --secondary;
+    --ion-text-color: --secondary !important;
 
     --ion-toolbar-background: --primary;
 
     --ion-item-background: --primary;
 
     --ion-card-background: --primary;
+    --ion-button-background: --secondary;
+    --ion-button-color: --primary;
+    --color: --secondary !important;
+    --background: --primary !important;
+
+
   }
 
 
@@ -73,5 +85,8 @@
     --ion-tab-bar-background: --primary;
 
     --ion-card-background: --primary;
+    --ion-button-background: --secondary;
+    --ion-button-color: --primary;
+
   }
 }

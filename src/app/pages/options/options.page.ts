@@ -17,6 +17,7 @@ export class OptionsPage implements OnInit {
     document.documentElement.style.setProperty('background-color', this.primary );
     document.documentElement.style.setProperty('color', this.secondary);
     document.documentElement.style.setProperty('fill', this.secondary);
+    document.documentElement.style.setProperty('stroke', this.secondary);
     const el = document.querySelector('html');
     el.style.setProperty('--primary', this.primary );
     el.style.setProperty('--secondary', this.secondary );

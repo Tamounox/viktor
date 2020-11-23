@@ -6,15 +6,7 @@
     align-content: center;
     justify-content: space-around;
     flex-direction: row;
-}
-
-.button2 {
-    height: 15%;
-    width: 30%;
-    font-size: 15px;
-    font-weight: bolder;
-    border-radius: 8px;
-    align-self: center;
+    z-index: 99;
 }
 
 .div-def  {
@@ -38,3 +30,10 @@
     font-style: italic;
     font-size:11px;
 }
+.bg {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+}
+

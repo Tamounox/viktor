@@ -4,13 +4,15 @@
 <ion-content>
   <div class='theme container'>
     <h1 style='text-align: center;'><b>Qui</b> vient d'écraser la concurence ?</h1>
+    <br><br>
     <div class="select-container">
-      <ion-select [(ngModel)]="selectedUser" name="selectUser" multiple="false" (ionChange)="selectWinner()" required >
+      <ion-select class="btn btn-choice" [(ngModel)]="selectedUser" name="selectUser" multiple="false" (ionChange)="selectWinner()" required >
+        <ion-select-otion value="personne">personne</ion-select-otion>
         <ion-select-option *ngFor="let user of users" value="{{user.name}}">
         {{user.name}}
         </ion-select-option>
       </ion-select>
-      <ion-button routerLink="/next-game" [hidden]="!isSelected" (click)="updateUsers()">Select</ion-button>
+      <button class="btn btn-choice-little btn-select" routerLink="/next-game" [hidden]="!isSelected" (click)="updateUsers()">Select</button>
     </div>
   </div>
 </ion-content>

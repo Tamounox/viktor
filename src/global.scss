@@ -34,6 +34,7 @@ html{
     fill: var(--secondary) !important;
     background-color: var(--primary) !important;
     color: var(--secondary) !important;
+    stroke: var(--secondary) !important;
   }
 
 .st0    {
@@ -42,31 +43,65 @@ html{
     height: 100%;
     width: 100%;
 }
-.choice {
+input   {
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-color: var(--secondary);
+
+}
+.btn  {
+    background-color: var(--secondary) !important;
+    color: var(--primary) !important;
+}
+.btn-win    {
+    height: 38px;
+    width: 170px;
+    color: var(--primary) !important;
+    background-color: var(--secondary) !important;
+    font-size: 15px;
+    border: 3px solid var(--primary) !important;
+    font-weight: bolder;
+    border-radius:12px;
+    text-align: center;
+    -webkit-border-radius:12px;
+    -moz-border-radius:12px;
+    -ms-border-radius:12px;
+    -o-border-radius:12px;
+}
+
+.btn-choice {
     height: 28px;
     width: 150px;
-    color: --primary !important;
-    background-color: --secondary !important;
+    color: var(--primary) !important;
+    background-color: var(--secondary) !important;
     font-size: 15px;
-    border: 3px solid --primary !important;
+    border: 3px solid var(--primary) !important;
     font-weight: bolder;
     border-radius: 8px;
     text-align: center;
-    -webkit-border-radius: 8px;
+    -webkit-border-radius: 12rem;
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
 }
-.choice-little   {
+.btn-choice-little   {
     height: 40px;
     width: 70px;
-    color: --primary !important;
-    background-color: --secondary !important;
+    color: var(--primary) !important;
+    background-color: var(--secondary) !important;
     font-size: 15px;
-    border: 3px solid --primary !important;
+    border: 3px solid var(--primary) !important;
     font-weight: bolder;
-    border-radius: 8px;
+    border-radius: 12rem;
     text-align: center;
+    -webkit-border-radius: 12rem;
+    -moz-border-radius: 12rem;
+    -ms-border-radius: 12rem;
+    -o-border-radius: 12rem;
+    align-self: center;
 }
 .div-container  {
     display: flex;
@@ -83,9 +118,16 @@ html{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-image: url('./assets/bg.jpg');
-    background-size: cover;
+    // background-image: url('./assets/VIKTOR.svg');
     background-position: right;
     background-repeat: no-repeat;
-
+    background-size: 50%;
+    
+}
+.igo    {
+    height: 140%;
+    position: fixed;
+    right: 0;
+    top: -63px;
+    z-index: 1;
 }

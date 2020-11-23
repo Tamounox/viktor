@@ -2,14 +2,20 @@
 </ion-header>
 
 <ion-content>
-  <div class='container'>
+  <div class='container flex'>
     <h1>Options</h1>
-    <h2>Créé ton propre thème</h2>
-    <input type="text" placeholder="#000000" [(ngModel)]="primary">
-    <div class='color' style='background-color: {{ primary }}'></div>
-    <input type="text" placeholder="#000000" [(ngModel)]="secondary">
-    <div class='color secondary-background' style='background-color:{{secondary}}'></div>
-    <button (click)="saveAsConfig()">Ok</button>
+    <div class="overflow">
+      <!-- Zone Thème -->
+      <h2>Créé ton propre thème</h2>
+      <input type="text" placeholder="#000000" [(ngModel)]="primary">
+      <div class='color' style='background-color: {{ primary }}'></div>
+      <input type="text" placeholder="#000000" [(ngModel)]="secondary">
+      <div class='color secondary-background' style='background-color:{{secondary}}'></div>
+      <!-- Fin Zone Thème -->
+      
+    </div>
+    <button class="btn btn-choice-little" (click)="saveAsConfig()">Ok</button>
+    <button class="btn btn-choice-little btn-back" routerLink="/players">retour</button>
+
   </div>
-  <div routerLink="/players">retour</div>
 </ion-content>

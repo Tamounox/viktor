@@ -4,3 +4,19 @@
     border: 2px solid;
     border-color: #ffffff;
 }
+.btn-back   {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+.flex   {
+    display: flex;
+    flex-direction: column;
+}
+.overflow   {
+    width: 50%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+
+}

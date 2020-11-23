@@ -33,6 +33,7 @@ export class TourismePage implements OnInit {
   nbrChoix = 3;
   igor;
   def;
+  lib;
   seconds = 2;
   g = false;
   ngOnInit() {
@@ -47,6 +48,7 @@ export class TourismePage implements OnInit {
   }
   choose(word) {
     this.igor = word;
+    this.lib = this.igor.libelle;
     this.def = this.igor.img;
     this.etape2 = true;
     this.etape1 = false;
