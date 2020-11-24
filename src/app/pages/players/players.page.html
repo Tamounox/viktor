@@ -18,7 +18,7 @@
         </div>
         <div class='action-container'>
           <button (click)="presentPopover()" class="btn btn-accueil btn-regles">Règles</button>
-          <button routerLink="/explication" [hidden]="!isOnePlayerOrMore" class="btn-go btn btn-accueil" >C Tipar!</button>
+          <button routerLink="/explication" (click)="setPlayers()" [hidden]="!isOnePlayerOrMore" class="btn-go btn btn-accueil" >C Tipar!</button>
         </div>
       </div>
   </ion-content>

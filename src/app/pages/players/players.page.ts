@@ -1,7 +1,7 @@
 import { UserService } from './../../user.service';
 import { Component, OnInit } from '@angular/core';
 import { ReglesComponent } from './../../components/regles/regles.component';
-import { PopoverController } from '@ionic/angular';
+import { PopoverController, AngularDelegate } from '@ionic/angular';
 
 
 @Component({
@@ -51,5 +51,13 @@ export class PlayersPage implements OnInit {
     if  (this.players.length === 0)  {
       this.isOnePlayerOrMore = false;
     }
+  }
+
+  setPlayers()  {
+    console.log(this.players);
+    this.players.forEach(p => {
+     p.score = 0;
+    });
+    console.log(this.players);
   }
 }
