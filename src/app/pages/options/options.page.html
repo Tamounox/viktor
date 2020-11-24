@@ -11,6 +11,9 @@
       <div class='color' style='background-color: {{ primary }}'></div>
       <input type="text" placeholder="#000000" [(ngModel)]="secondary">
       <div class='color secondary-background' style='background-color:{{secondary}}'></div>
+      <h2>Thèmes prédéfinis</h2>
+      <button class="btn btn-choice-little" (click)="onClick('igor')">Igor</button>
+      <button class="btn btn-choice-little" (click)="onClick('viktor')">Viktor</button>
       <!-- Fin Zone Thème -->
       
     </div>

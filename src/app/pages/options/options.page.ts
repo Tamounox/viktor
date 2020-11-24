@@ -25,4 +25,15 @@ export class OptionsPage implements OnInit {
 
   }
 
+  onClick(value) {
+    if (value === 'igor' )  {
+      this.primary = '#707d36';
+      this.secondary = "#363d18";
+    }
+    if (value === 'viktor' )  {
+      this.primary = '#f8eb3c';
+      this.secondary = '#ee7406';
+    }
+  }
+
 }

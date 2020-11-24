@@ -2,10 +2,14 @@
 <!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#EE740A;stroke-width:14;stroke-miterlimit:10;}
+	.st1{fill:#EE7302;}
+</style>
 <path class="st0" d="M590.72,414.11C590.72,577.56,478.98,703,315.54,703S4.28,622.55,4.28,459.1S93.48,138,256.92,138
 	S590.72,250.67,590.72,414.11z"/>
-<polygon style="fill: var(--secondary);" points="211.84,209.45 243.99,420.8 280.74,420.8 280.74,209.45 "/>
-<polygon style="fill: var(--secondary);" points="375.67,241.61 346.58,420.8 309.83,420.8 309.83,241.61 "/>
-<path style="fill: var(--secondary);" d="M470.97,596.85H123.69c0-49.64,54.28-91.42,128.07-103.81l-8.36,51.53h39.37v-54.9
+<polygon class="st1" points="211.84,209.45 243.99,420.8 280.74,420.8 280.74,209.45 "/>
+<polygon class="st1" points="375.67,241.61 346.58,420.8 309.83,420.8 309.83,241.61 "/>
+<path class="st1" d="M470.97,596.85H123.69c0-49.64,54.28-91.42,128.07-103.81l-8.36,51.53h39.37v-54.9
 	c4.79-0.26,9.65-0.38,14.55-0.38c0.95,0,1.91,0,2.86,0.03v74.49h41.21l-11.04-72.56C410.46,500.79,470.97,544.44,470.97,596.85z"/>
 </svg>
