@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS themetable(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,primary TEXT,secondary TEXT);
+INSERT or IGNORE INTO themetable(id, name, primary, secondary) VALUES (0, 'Test', '#000', '#fff');

@@ -6,16 +6,22 @@
     <h1>Options</h1>
     <div class="overflow">
       <!-- Zone Thème -->
+      <h2>Thèmes prédéfinis</h2>
+      <button class="btn btn-choice-little" (click)="onClick('igor')">Igor</button>
+      <button class="btn btn-choice-little" (click)="onClick('viktor')">Viktor</button>
       <h2>Créé ton propre thème</h2>
+      <input type="text" placeholder="nom" [(ngModel)]="name">
+      <br>  
       <input type="text" placeholder="#000000" [(ngModel)]="primary">
       <div class='color' style='background-color: {{ primary }}'></div>
       <input type="text" placeholder="#000000" [(ngModel)]="secondary">
       <div class='color secondary-background' style='background-color:{{secondary}}'></div>
-      <h2>Thèmes prédéfinis</h2>
-      <button class="btn btn-choice-little" (click)="onClick('igor')">Igor</button>
-      <button class="btn btn-choice-little" (click)="onClick('viktor')">Viktor</button>
+      <button (click)="addTheme()" class="btn btn-choice-little">Add +</button>
+      <h2>Mes thèmes</h2>
       <!-- Fin Zone Thème -->
-      
+      <div *ngFor="let theme of themes">
+        <button (click)="selectTheme(theme)" class="btn btn-choice-little">{{theme.name}}</button>
+      </div>
     </div>
     <button class="btn btn-choice-little" (click)="saveAsConfig()">Ok</button>
     <button class="btn btn-choice-little btn-back" routerLink="/players">retour</button>
