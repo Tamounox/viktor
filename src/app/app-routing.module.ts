@@ -44,10 +44,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/Jeux/definition/definition.module').then( m => m.DefinitionPageModule)
   },
   {
-    path: 'mosaique',
-    loadChildren: () => import('./pages/Jeux/mosaique/mosaique.module').then( m => m.MosaiquePageModule)
-  },
-  {
     path: 'vinner',
     loadChildren: () => import('./pages/vinner/vinner.module').then( m => m.VinnerPageModule)
   },
@@ -62,6 +58,14 @@ const routes: Routes = [
   {
     path: 'next-game',
     loadChildren: () => import('./pages/next-game/next-game.module').then( m => m.NextGamePageModule)
+  },
+  {
+    path: 'zoom',
+    loadChildren: () => import('./pages/Jeux/zoom/zoom.module').then( m => m.ZoomPageModule)
+  },
+  {
+    path: 'mosaique',
+    loadChildren: () => import('./pages/Jeux/mosaique/mosaique.module').then( m => m.MosaiquePageModule)
   },
 ];
 
