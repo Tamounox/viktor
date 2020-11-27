@@ -11,16 +11,17 @@
 
     <div [hidden]="!etape2">
       <div class="mosaiqueImage" [ngStyle]="{'height': heightPicture +'px', 'width': widthPicture +'px'}">
-        <ion-img [src]=imgPerson></ion-img>
-      </div>
-      <div class="mosaique">
-        <div *ngFor='let x of table; let index_x = index;'>
+        <ion-img [ngStyle]="{'height': heightPicture +'px', 'width': widthPicture +'px'}" [src]=imgPerson></ion-img>
+        <div [ngStyle]="{'margin-top': '-' + heightPicture +'px' }">
+          <div *ngFor='let x of table; let index_x = index;'>
             <div *ngFor="let y of x; let index_y = index;">
                 <div *ngIf="y" class="block" [ngStyle]="{'height': height +'px', 'width': width +'px', 'margin-left':  width*index_x +'px', 'margin-top':  height*index_y +'px' }"></div>
                 <div *ngIf="!y" class="primeblock" [ngStyle]="{'margin-left':  width*index_x +'px', 'margin-top':  height*index_y +'px' }"></div>
-            </div>
+           </div>
+          </div>
         </div>
       </div>
+
     </div>
 
     <div class="div-winner" style="height: 100%" [hidden]="g || !etape2 || seconds == 0">

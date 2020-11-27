@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Platform } from '@ionic/angular';
 import { MosaiqueService } from './mosaique.service';
 
 @Component({
@@ -8,20 +9,20 @@ import { MosaiqueService } from './mosaique.service';
 })
 export class MosaiquePage implements OnInit {
 
-  constructor(private mosaiqueService: MosaiqueService) { }
+  constructor(private mosaiqueService: MosaiqueService, private platform: Platform) { }
 
   // Definitions de nos variables global (en cour de conception)
   table = []
   height = 0;
   width = 0;
   
-  heightPicture = 500;
-  widthPicture = 500;
+  heightPicture;
+  widthPicture;
 
   // Creation des variable d'une personne
   person
   persons = []
-  imgPerson
+  imgPerson = 'https://www.zooplus.fr/magazine/wp-content/uploads/2019/11/chaton-errant-768x512.jpeg'
   namePerson
  
   // gestion du temps
@@ -42,6 +43,12 @@ export class MosaiquePage implements OnInit {
   allpersons = [];
 
   ngOnInit() {
+
+    this.platform.ready().then(() => {
+      this.heightPicture = this.platform.height();
+      this.widthPicture = this.platform.width();
+    });
+
     this.allpersons = this.mosaiqueService.getAllpersons();
     for (let index = 0; index < this.nbrChoix; index++) {
       let indexWord = Math.floor(Math.random() * Math.floor(this.allpersons.length));
@@ -54,16 +61,18 @@ export class MosaiquePage implements OnInit {
     this.generateTable()
   }
 
-
   // Creation de notre table
   generateTable(){
-    this.width = 50; // largeur
-    this.height = 50; // hauteur
+    let numbX = 5
+    let numbY = 4
+
+    this.width =  this.platform.width() / numbX; // largeur
+    this.height =  this.platform.height() / numbY; // hauteur
     // let arr1
     // let arr2
-    var x = new Array(10);
+    var x = new Array(numbX);
     for (var i = 0; i < x.length; i++) {
-      x[i] = new Array(6).fill(true);
+      x[i] = new Array(numbY).fill(true);
     }
     this.table = x
   }
@@ -80,7 +89,7 @@ export class MosaiquePage implements OnInit {
 
   mosaiqueGO(){
     if (this.seconds > 0){
-      setTimeout(() => this.mosaiqueSet(), 180);
+      setTimeout(() => this.mosaiqueSet(), 500);
     }
   }
 
