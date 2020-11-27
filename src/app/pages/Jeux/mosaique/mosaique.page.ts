@@ -90,6 +90,8 @@ export class MosaiquePage implements OnInit {
   mosaiqueGO(){
     if (this.seconds > 0){
       setTimeout(() => this.mosaiqueSet(), 500);
+    } else {
+      return false
     }
   }
 
@@ -97,7 +99,6 @@ export class MosaiquePage implements OnInit {
     this.updateTable()
     this.mosaiqueGO()
   }
-
 
   // Etape 1 choix de la person a faire deviner
   choose(person) {
