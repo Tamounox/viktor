@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './jeu.page.html',
   styleUrls: ['./jeu.page.scss'],
 })
-export class JeuPage {
-  jeux = ['definition', 'tourisme', 'zoologie','zoom'];
+export class JeuPage  {
+  jeux = ['definition', 'tourisme', 'zoologie', 'mosaique', 'zoom'];
   //, 'microscope', 'tour bonus'
 
   tour  = 0;
