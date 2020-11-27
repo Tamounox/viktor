@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-jeu',
   templateUrl: './jeu.page.html',
   styleUrls: ['./jeu.page.scss'],
 })
-export class JeuPage {
-  jeux = ['definition', 'tourisme', 'zoologie','zoom'];
+export class JeuPage  {
+  jeux = ['definition', 'tourisme', 'zoologie', 'mosaique'];
   //, 'microscope', 'tour bonus'
-
   tour  = 0;
   selectedGame = '';
 
