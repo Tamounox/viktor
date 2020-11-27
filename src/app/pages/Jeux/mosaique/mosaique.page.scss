@@ -1,18 +1,9 @@
-ion-img {
-    max-width: 100%;
-    max-height: 100%;
+ion-img{
+    object-fit: cover;
 }
-
-// .mosaiqueImage {
-//     width: 100px;
-//     height: 100px;
-// }
 
 .mosaique { 
     display: flex; 
-    margin-top: -500px;
-	width: 500px;
-	height: 500px;
 	z-index: 2;
 }
 
