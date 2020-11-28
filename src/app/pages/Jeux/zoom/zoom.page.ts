@@ -18,14 +18,16 @@ export class ZoomPage implements OnInit {
   public choosenWords: PictureWord[] = [];
   public nbrChoix = 3;
   public seconds = 10;
-  public scale = 10;
   public gameStarted = false;
   public igor: PictureWord; //Mot choisi par le joueur
   public choosenImg: string;
   private ctx: CanvasRenderingContext2D;
 
-  public zoomRate: number = 5;
   public wordsDictionary: PictureWord[];
+
+  public scale = 10.0;
+  public scaleMultiplier = 0.8;
+  public translatePos;
 
   constructor(private _zoomService: ZoomService) { }
 
@@ -41,6 +43,12 @@ export class ZoomPage implements OnInit {
         this.etape1 = true;
       }
     }
+
+    this.ctx = this.canvas.nativeElement.getContext('2d');
+    this.translatePos = {
+      x: this.canvas.nativeElement.width / 2,
+      y: this.canvas.nativeElement.height / 2
+    };
   }
 
   choose(word: PictureWord) {
@@ -67,22 +75,28 @@ export class ZoomPage implements OnInit {
 
   nul() { //Décrementation du timer et recalcule du zoom de l'image
     this.seconds = this.seconds - 1;
-    this.zoomRate = this.zoomRate - 0.5;
-    this.resizeCanvas();
+    this.dezoom();
     this.timer();
   }
 
   drawImage() {
-    this.ctx = this.canvas.nativeElement.getContext('2d');
-
     setTimeout(() => {
-      this.ctx.scale(this.scale, this.scale);
-      this.ctx.drawImage(this.img.nativeElement, 0, 0, 300, 150);
+      this.draw(this.scale, this.translatePos);
     }, 500);
   }
 
-  resizeCanvas() {
-    this.scale = this.scale - 1;
-    this.ctx.scale(this.scale, this.scale);
+  dezoom() {
+    this.scale *= this.scaleMultiplier;
+    this.draw(this.scale, this.translatePos);
+  }
+
+  draw(scale, translatePos) {
+    this.ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
+    
+    this.ctx.save();
+    this.ctx.translate(translatePos.x, translatePos.y);
+    this.ctx.scale(scale, scale);
+    this.ctx.drawImage(this.img.nativeElement, -translatePos.x, -translatePos.y, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
+    this.ctx.restore();
   }
 }
