@@ -7,21 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./options.page.scss'],
 })
 export class OptionsPage implements OnInit {
-  themes: Theme[] = [];
+  themes;
   constructor(private themeService: ThemeService) { }
   primary;
   secondary;
   name;
   theme;
   ngOnInit() {
-    this.themeService.getDatabaseState().subscribe( ready =>  {
-      if(ready) {
-        this.themeService.getThemes().subscribe(themes => {
-          console.log('themes changes ', themes)
-          this.themes = themes;
-        })
-      }
-    })
+    this.themes = this.themeService.getData();
   }
   saveAsConfig()  {
     const el = document.querySelector('html');
@@ -48,10 +41,7 @@ export class OptionsPage implements OnInit {
         this.secondary
     ];
     this.themeService.addTheme(this.name, this.primary, this.secondary);
-    this.themeService.getThemes().subscribe(themes => {
-      console.log('themes changes ', themes)
-      this.themes = themes;
-    })
+    this.themes = this.themeService.getData();
   }
 
   selectTheme(theme)  {
