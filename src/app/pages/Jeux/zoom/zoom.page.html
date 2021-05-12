@@ -8,9 +8,9 @@
 
     <div class="div-def" [hidden]="!etape2 || end">
       <img #img style="display: none;" src="{{choosenImg}}" /> 
-      <canvas #canvas></canvas>
+      <canvas style="height: 100%; width: 100%;" #canvas></canvas>
 
-      <button class="button" [hidden]="gameStarted" (click)="go()">Go!</button>
+      <button class="button" style="position: absolute; bottom: 0;" [hidden]="gameStarted" (click)="go()">Go!</button>
       <h1 [hidden]="!gameStarted || end">Il reste {{seconds}}
         <span *ngIf="seconds > 1">secondes</span> <span *ngIf="seconds === 1">seconde</span> !</h1>
     </div>

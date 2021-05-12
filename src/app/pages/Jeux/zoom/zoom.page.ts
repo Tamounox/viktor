@@ -17,16 +17,16 @@ export class ZoomPage implements OnInit {
   public end = false;
   public choosenWords: PictureWord[] = [];
   public nbrChoix = 3;
-  public seconds = 10;
+  public seconds = 20;
   public gameStarted = false;
   public igor: PictureWord; //Mot choisi par le joueur
   public choosenImg: string;
   private ctx: CanvasRenderingContext2D;
 
   public wordsDictionary: PictureWord[];
-
-  public scale = 10.0;
-  public scaleMultiplier = 0.8;
+  public scale = 50.0;
+  public intervaler = (this.seconds * 1000) / this.scale;
+  public scaleMultiplier = 0.93;
   public translatePos;
 
   constructor(private _zoomService: ZoomService) { }
@@ -62,6 +62,7 @@ export class ZoomPage implements OnInit {
 
   go() {
     this.timer();
+    this.dezoom();
     this.gameStarted = true;
   }
 
@@ -75,7 +76,6 @@ export class ZoomPage implements OnInit {
 
   nul() { //Décrementation du timer et recalcule du zoom de l'image
     this.seconds = this.seconds - 1;
-    this.dezoom();
     this.timer();
   }
 
@@ -86,13 +86,24 @@ export class ZoomPage implements OnInit {
   }
 
   dezoom() {
-    this.scale *= this.scaleMultiplier;
-    this.draw(this.scale, this.translatePos);
+    if (this.seconds > 0) {
+      this.scale *= this.scaleMultiplier;
+      // while (this.seconds > 0) {
+        setTimeout(() => this.igo(), this.intervaler);
+      }
+    // }
+    else {
+      this.scale = 1;
+    }
   }
 
+  igo() {
+    console.log('igo');
+    this.draw(this.scale, this.translatePos);
+    this.dezoom();
+  }
   draw(scale, translatePos) {
     this.ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
-    
     this.ctx.save();
     this.ctx.translate(translatePos.x, translatePos.y);
     this.ctx.scale(scale, scale);
