@@ -63,7 +63,10 @@ const routes: Routes = [
     path: 'zoom',
     loadChildren: () => import('./pages/Jeux/zoom/zoom.module').then( m => m.ZoomPageModule)
   },
-
+  {
+    path: 'mosaique',
+    loadChildren: () => import('./pages/Jeux/mosaique/mosaique.module').then( m => m.MosaiquePageModule)
+  },
 ];
 
 @NgModule({
