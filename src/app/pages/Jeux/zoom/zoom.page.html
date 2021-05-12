@@ -1,0 +1,23 @@
+<ion-content>
+  <div class="div-container theme">
+    <div class="div-div-buttons" [hidden]="!etape1">
+      <div class="div-buttons" *ngFor="let word of choosenWords">
+        <button (click)="choose(word)" class="choice">{{word.libelle}}</button>
+      </div>
+    </div>
+
+    <div class="div-def" [hidden]="!etape2 || end">
+      <img #img style="display: none;" src="{{choosenImg}}" /> 
+      <canvas #canvas></canvas>
+
+      <button class="button" [hidden]="gameStarted" (click)="go()">Go!</button>
+      <h1 [hidden]="!gameStarted || end">Il reste {{seconds}}
+        <span *ngIf="seconds > 1">secondes</span> <span *ngIf="seconds === 1">seconde</span> !</h1>
+    </div>
+
+    <div class="div-winner" [hidden]="!end">
+      <h1>C'est terminé !</h1>
+      <button class="button" routerLink="/vinner">Désigner gagnant !</button>
+    </div>
+  </div>
+</ion-content>

@@ -91,6 +91,7 @@ export class MosaiquePage implements OnInit {
     if (this.seconds > 0){
       setTimeout(() => this.mosaiqueSet(), this.igo);
     } else {
+      this.cleanMosaique();  
       return false;
     }
   }
@@ -118,7 +119,7 @@ export class MosaiquePage implements OnInit {
   }
 
   cleanMosaique() {
-    
+    table = [];
   }
 
   // compte du timer

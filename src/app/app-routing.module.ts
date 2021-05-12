@@ -63,6 +63,14 @@ const routes: Routes = [
     path: 'options',
     loadChildren: () => import('./pages/options/options.module').then( m => m.OptionsPageModule)
   },
+  {
+    path: 'zoom',
+    loadChildren: () => import('./pages/Jeux/zoom/zoom.module').then( m => m.ZoomPageModule)
+  },
+  {
+    path: 'mosaique',
+    loadChildren: () => import('./pages/Jeux/mosaique/mosaique.module').then( m => m.MosaiquePageModule)
+  },
 ];
 
 @NgModule({
