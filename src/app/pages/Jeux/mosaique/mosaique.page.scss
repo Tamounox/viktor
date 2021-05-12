@@ -12,17 +12,13 @@ ion-img{
     z-index: 3;
 }
 
-.block {
-    background-color: #50c8ff;
-    position: absolute;
-}
-
 .primeblock {
     position: absolute;
     z-index: -1;
 }
 
 .div-buttons    {
+    z-index: 999;
     height: 20%;
     width: 30%;
     display: flex;

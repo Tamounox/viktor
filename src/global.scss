@@ -44,6 +44,10 @@ html{
     width: 100%;
     margin-top: -2rem;
 }
+.block {
+    background-color: var(--primary);
+    position: absolute;
+}
 input   {
     border-left: 0px;
     border-right: 0px;
@@ -72,21 +76,20 @@ input   {
     -ms-border-radius:12px;
     -o-border-radius:12px;
 }
-
 .btn-choice {
-    height: 28px;
-    width: 150px;
+    height: 30px;
+    width: 200px;
     color: var(--primary) !important;
     background-color: var(--secondary) !important;
-    font-size: 15px;
+    font-size: 1rem;
     border: 3px solid var(--primary) !important;
     font-weight: bolder;
-    border-radius: 8px;
+    border-radius: 9px;
     text-align: center;
-    -webkit-border-radius: 12rem;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
 }
 .btn-choice-little   {
     height: 40px;

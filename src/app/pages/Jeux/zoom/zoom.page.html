@@ -1,8 +1,17 @@
 <ion-content>
   <div class="div-container theme">
     <div class="div-div-buttons" [hidden]="!etape1">
+      <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" class="igo" xml:space="preserve">
+        <path style="fill: var(--primary); stroke: var(--secondary); stroke-width:35px; transform: rotate(7deg);" d="M590.72,414.11C590.72,577.56,478.98,703,315.54,703S4.28,622.55,4.28,459.1S93.48,138,256.92,138
+          S590.72,250.67,590.72,414.11z"/>
+        <polygon  style="fill: var(--secondary); transform: rotate(7deg);" points="211.84,209.45 243.99,420.8 280.74,420.8 280.74,209.45 "/>
+        <polygon  style="fill: var(--secondary); transform: rotate(7deg);" points="375.67,241.61 346.58,420.8 309.83,420.8 309.83,241.61 "/>
+        <path  style="fill: (--secondary); transform: rotate(7deg);" d="M470.97,596.85H123.69c0-49.64,54.28-91.42,128.07-103.81l-8.36,51.53h39.37v-54.9
+          c4.79-0.26,9.65-0.38,14.55-0.38c0.95,0,1.91,0,2.86,0.03v74.49h41.21l-11.04-72.56C410.46,500.79,470.97,544.44,470.97,596.85z"/>
+      </svg>
       <div class="div-buttons" *ngFor="let word of choosenWords">
-        <button (click)="choose(word)" class="choice">{{word.libelle}}</button>
+        <button (click)="choose(word)" class="btn-choice btn">{{word.libelle}}</button>
       </div>
     </div>
 
@@ -10,14 +19,14 @@
       <img #img style="display: none;" src="{{choosenImg}}" /> 
       <canvas #canvas></canvas>
 
-      <button class="button" [hidden]="gameStarted" (click)="go()">Go!</button>
+      <button class="btn btn-choice-little" [hidden]="gameStarted" (click)="go()">Go!</button>
       <h1 [hidden]="!gameStarted || end">Il reste {{seconds}}
         <span *ngIf="seconds > 1">secondes</span> <span *ngIf="seconds === 1">seconde</span> !</h1>
     </div>
 
     <div class="div-winner" [hidden]="!end">
       <h1>C'est terminé !</h1>
-      <button class="button" routerLink="/vinner">Désigner gagnant !</button>
+      <button class="btn btn-win" routerLink="/vinner">Désigner gagnant !</button>
     </div>
   </div>
 </ion-content>

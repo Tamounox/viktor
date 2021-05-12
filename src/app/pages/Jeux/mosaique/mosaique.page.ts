@@ -119,7 +119,7 @@ export class MosaiquePage implements OnInit {
   }
 
   cleanMosaique() {
-    table = [];
+    this.table = [];
   }
 
   // compte du timer

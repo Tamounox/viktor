@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jeu.page.scss'],
 })
 export class JeuPage  {
-  jeux = ['definition', 'tourisme', 'zoologie', 'mosaique', 'zoom'];
+  jeux = ['zoom'];
   //, 'microscope', 'tour bonus'
   tour  = 0;
   selectedGame = '';

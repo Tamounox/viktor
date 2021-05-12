@@ -27,15 +27,15 @@ export class ZoomPage implements OnInit {
 
   wordsDictionary: PictureWord[] = [{
     libelle: 'Omar Sy',
-    img: './../../../assets/celebrites/omar-sy.jpg',
+    img: './../../../../assets/celebrites/omar-sy.jpg',
   },
   {
     libelle: 'Johnny Hallyday',
-    img: './../../../assets/celebrites/johnny-hallyday.jpg',
+    img: './../../../../assets/celebrites/johnny-hallyday.jpg',
   },
   {
     libelle: 'Zinédine Zidane',
-    img: './../../../assets/celebrites/zinedine-zidane.jpg',
+    img: './../../../../assets/celebrites/zinedine-zidane.jpg',
   },
   ];
 
