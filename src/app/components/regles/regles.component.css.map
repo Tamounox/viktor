@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "regles.component.scss"
+    ],
+    "names": [],
+    "file": "regles.component.css"
+}

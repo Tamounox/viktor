@@ -1,0 +1,100 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.btn-regles {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+}
+
+.btn-accueil {
+  border-radius: 12rem;
+  height: 27px;
+  width: 60px;
+}
+
+.btn-option {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-go {
+  right: 10px;
+  bottom: 10px;
+  height: 35px;
+  position: fixed;
+}
+
+.btn-add-del {
+  margin-left: 5px;
+  border-radius: 13rem;
+  -webkit-border-radius: 13rem;
+  -moz-border-radius: 13rem;
+  -ms-border-radius: 13rem;
+  -o-border-radius: 13rem;
+}
+
+.list-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.list {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.action-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.scrolling-list {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+span-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: scroll;
+  height: 60px;
+  width: 60px;
+}
+/*# sourceMappingURL=players.page.css.map */

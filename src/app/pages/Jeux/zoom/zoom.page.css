@@ -1,0 +1,74 @@
+.div-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.div-buttons .choice {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10%;
+  margin-bottom: 50px;
+}
+
+.div-def {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.div-def h1 {
+  position: fixed;
+  top: 20px;
+}
+
+.div-def .choosenImg {
+  height: 30%;
+  width: 100%;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.div-winner {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button {
+  height: 15%;
+  width: 30%;
+  color: #f8eb3c !important;
+  background-color: #ee7406 !important;
+  font-size: 15px;
+  border: 2px solid #f8eb3c !important;
+  font-weight: bolder;
+  border-radius: 8px;
+}
+/*# sourceMappingURL=zoom.page.css.map */

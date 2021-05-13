@@ -1,0 +1,17 @@
+.jeu {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 22rem;
+  width: 100%;
+  background-size: 100%;
+  background-color: --primary;
+  fill: --secondary;
+  color: --secondary;
+}
+
+.viktor {
+  height: 65px;
+  width: 65px;
+}
+/*# sourceMappingURL=jeu.page.css.map */

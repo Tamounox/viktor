@@ -1,0 +1,96 @@
+/** Ionic CSS Variables **/
+:root {
+  --primary: #f8eb3c;
+  --secondary: #ee7406;
+  /** primary **/
+  --ion-color-primary:  --secondary;
+  /** secondary **/
+  --ion-color-secondary:  --primary;
+}
+
+.primary-background {
+  background-color: --primary;
+}
+
+.secondary-background {
+  background-color: --secondary;
+}
+
+@media (prefers-color-scheme: dark) {
+  /*
+   * Dark Colors
+   * -------------------------------------------
+   */
+  body {
+    --ion-color-primary: --secondary;
+    --ion-color-secondary: --secondary;
+    --ion-button-background: var(--secondary);
+    --ion-button-color: var(--primary);
+    --color: --secondary !important;
+    --background: --primary !important;
+  }
+  /*
+   * iOS Dark Theme
+   * -------------------------------------------
+   */
+  .ios body {
+    --ion-background-color: --primary;
+    --ion-text-color: --secondary !important;
+    --ion-toolbar-background: --primary;
+    --ion-item-background: --primary;
+    --ion-card-background: --primary;
+    --ion-button-background: --secondary;
+    --ion-button-color: --primary;
+    --color: --secondary !important;
+    --background: --primary !important;
+  }
+  /*
+   * Material Design Dark Theme
+   * -------------------------------------------
+   */
+  .md body {
+    --ion-background-color: --primary;
+    --ion-text-color: --secondary;
+    --ion-border-color: --secondary;
+    --ion-item-background: --primary;
+    --ion-toolbar-background: --primary;
+    --ion-tab-bar-background: --primary;
+    --ion-card-background: --primary;
+    --ion-button-background: --secondary;
+    --ion-button-color: --primary;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --ion-color-primary: --secondary;
+    --ion-color-secondary: --secondary;
+    --ion-button-background: var(--secondary);
+    --ion-button-color: var(--primary);
+    --color: --secondary !important;
+    --background: --primary !important;
+  }
+  .ios body {
+    --ion-background-color: --primary;
+    --ion-text-color: --secondary !important;
+    --ion-toolbar-background: --primary;
+    --ion-item-background: --primary;
+    --ion-card-background: --primary;
+    --ion-button-background: --secondary;
+    --ion-button-color: --primary;
+    --color: --secondary !important;
+    --background: --primary !important;
+  }
+  .md body {
+    --ion-background-color: --primary;
+    --ion-text-color: --secondary;
+    --ion-border-color: --secondary;
+    --ion-item-background: --primary;
+    --ion-toolbar-background: --primary;
+    --ion-tab-bar-background: --primary;
+    --ion-card-background: --primary;
+    --ion-button-background: --secondary;
+    --ion-button-color: --primary;
+  }
+}
+/*# sourceMappingURL=variables.css.map */

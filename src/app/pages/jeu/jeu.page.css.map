@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAI;EACJ,mBAAmB,EAAE,MAAM;EAC3B,iBAAiB,EAAE,SAAS;EAC5B,eAAe,EAAE,KAAK;EACtB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,IAAI;EACX,eAAe,EAAE,IAAI;EACrB,gBAAgB,EAAE,SAAS;EAC3B,IAAI,EAAE,WAAW;EACjB,KAAK,EAAE,WAAW;CACrB;;AACD,AAAA,OAAO,CAAC;EACJ,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "jeu.page.scss"
+    ],
+    "names": [],
+    "file": "jeu.page.css"
+}

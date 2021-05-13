@@ -60,6 +60,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/next-game/next-game.module').then( m => m.NextGamePageModule)
   },
   {
+    path: 'zoom',
+    loadChildren: () => import('./pages/Jeux/zoom/zoom.module').then( m => m.ZoomPageModule)
+  },
+  {
     path: 'options',
     loadChildren: () => import('./pages/options/options.module').then( m => m.OptionsPageModule)
   },

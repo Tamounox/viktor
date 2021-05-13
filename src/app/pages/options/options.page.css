@@ -1,0 +1,35 @@
+.color {
+  height: 50px;
+  width: 50px;
+  border: 2px solid;
+  border-color: #ffffff;
+}
+
+.btn-back {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.overflow {
+  width: 50%;
+  overflow: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/*# sourceMappingURL=options.page.css.map */
